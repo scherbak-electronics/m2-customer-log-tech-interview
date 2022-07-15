@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+	<table name="shch_customerlog_customer_connexion_log" resource="default" engine="innodb" comment="shch_customerlog_customer_connexion_log Table">
+		<column xsi:type="int" name="customer_connexion_log_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Entity Id"/>
+		<constraint xsi:type="primary" referenceId="PRIMARY">
+			<column name="customer_connexion_log_id"/>
+		</constraint>
+		<column name="created_at" nullable="false" xsi:type="timestamp" comment="created_at" default="CURRENT_TIMESTAMP"/>
+		<column name="updated_at" nullable="false" xsi:type="timestamp" comment="updated_at" default="CURRENT_TIMESTAMP" on_update="true"/>
+		<column name="ip" nullable="false" xsi:type="varchar" comment="ip" length="255"/>
+		<column name="customer_id" nullable="false" xsi:type="int" comment="customer_id" identity="false" unsigned="true"/>
+	</table>
+</schema>

@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+	<acl>
+		<resources>
+			<resource id="Magento_Backend::admin">
+				<resource id="Shch_CustomerLog::customer_connexion_log" title="customer_connexion_log" sortOrder="10">
+					<resource id="Shch_CustomerLog::customer_connexion_log_save" title="Save customer_connexion_log" sortOrder="10"/>
+					<resource id="Shch_CustomerLog::customer_connexion_log_delete" title="Delete customer_connexion_log" sortOrder="20"/>
+					<resource id="Shch_CustomerLog::customer_connexion_log_update" title="Update customer_connexion_log" sortOrder="30"/>
+					<resource id="Shch_CustomerLog::customer_connexion_log_view" title="View customer_connexion_log" sortOrder="40"/>
+				</resource>
+				<resource id="Magento_Backend::stores">
+					<resource id="Magento_Backend::stores_settings">
+						<resource id="Magento_Config::config">
+							<resource id="Shch_CustomerLog::config_shch_customerlog" title="customer"/>
+						</resource>
+					</resource>
+				</resource>
+			</resource>
+		</resources>
+	</acl>
+</config>

@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="Shch::top_level" title="Shch" module="Shch_CustomerLog" sortOrder="9999" resource="Magento_Backend::content"/>
+		<add id="Shch_CustomerLog::shch_customerlog_customer_connexion_log" title="customer connexion log" module="Shch_CustomerLog" sortOrder="9999" resource="Magento_Backend::content" parent="Shch::top_level" action="shch_customerlog/customerconnexionlog/index"/>
+	</menu>
+</config>

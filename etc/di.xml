@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="Shch\CustomerLog\Api\CustomerConnexionLogRepositoryInterface" type="Shch\CustomerLog\Model\CustomerConnexionLogRepository"/>
+	<preference for="Shch\CustomerLog\Api\Data\CustomerConnexionLogInterface" type="Shch\CustomerLog\Model\CustomerConnexionLog"/>
+	<preference for="Shch\CustomerLog\Api\Data\CustomerConnexionLogSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="Shch\CustomerLog\Model\ResourceModel\CustomerConnexionLog\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">shch_customerlog_customer_connexion_log</argument>
+			<argument name="resourceModel" xsi:type="string">Shch\CustomerLog\Model\ResourceModel\CustomerConnexionLog\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="shch_customerlog_customer_connexion_log_listing_data_source" xsi:type="string">Shch\CustomerLog\Model\ResourceModel\CustomerConnexionLog\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+	<type name="Magento\Customer\Model\AccountManagement">
+		<plugin name="Shch_CustomerLog_Plugin_Magento_Customer_Model_AccountManagement" type="Shch\CustomerLog\Plugin\Magento\Customer\Model\AccountManagement" sortOrder="10" disabled="false"/>
+	</type>
+</config>

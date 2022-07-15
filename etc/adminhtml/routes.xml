@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+	<router id="admin">
+		<route frontName="shch_customerlog" id="shch_customerlog">
+			<module before="Magento_Backend" name="Shch_CustomerLog"/>
+		</route>
+	</router>
+</config>
