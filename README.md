@@ -1,52 +1,16 @@
-# Mage2 Module Shch CustomerLog
+# Mage2 Module Shch_CustomerLog
 
-    ``shch/module-customerlog``
+this is example module for magento 2
+it implements the following functionality:
 
- - [Main Functionalities](#markdown-header-main-functionalities)
- - [Installation](#markdown-header-installation)
- - [Configuration](#markdown-header-configuration)
- - [Specifications](#markdown-header-specifications)
- - [Attributes](#markdown-header-attributes)
+Magento2 Technical Test
 
+test to be done in 2 hours maximum:   • 
+STEP 1 : Create a new  Magento 2 module • 
+STEP 2 : Create new table “customer_connexion_logs” in DB with field (created_at, updated_at, IP, customer_id ) 
+• STEP 3 : Add config in backoffice customer section conf name : track customer connexions ? yes/no
+• STEP 4 : add new entree in “customer_connexion_logs”  table for each user connexion (loggin)
+• STEP 5 : if conf “track website visit” is enabled  Send an email every day midnight to email with total connexions for last day (ex 04/04 00:00 send total connexions for 03/04)
+• STEP 6 : Add customer IP in backoffice customer page
 
-## Main Functionalities
-Technical Interview Test
-
-## Installation
-\* = in production please use the `--keep-generated` option
-
-### Type 1: Zip file
-
- - Unzip the zip file in `app/code/Shch`
- - Enable the module by running `php bin/magento module:enable Shch_CustomerLog`
- - Apply database updates by running `php bin/magento setup:upgrade`\*
- - Flush the cache by running `php bin/magento cache:flush`
-
-### Type 2: Composer
-
- - Make the module available in a composer repository for example:
-    - private repository `repo.magento.com`
-    - public repository `packagist.org`
-    - public github repository as vcs
- - Add the composer repository to the configuration by running `composer config repositories.repo.magento.com composer https://repo.magento.com/`
- - Install the module composer by running `composer require shch/module-customerlog`
- - enable the module by running `php bin/magento module:enable Shch_CustomerLog`
- - apply database updates by running `php bin/magento setup:upgrade`\*
- - Flush the cache by running `php bin/magento cache:flush`
-
-
-## Configuration
-
- - Track Customer Connexions (customer/customer_log/track_customer_connexions)
-
-
-## Specifications
-
- - Plugin
-	- afterAuthenticate - Magento\Customer\Model\AccountManagement > Shch\CustomerLog\Plugin\Magento\Customer\Model\AccountManagement
-
-
-## Attributes
-
-
-
+NOTE: steps 5 and 6 not implemented.
