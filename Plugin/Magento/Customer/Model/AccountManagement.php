@@ -38,13 +38,16 @@ class AccountManagement
         $username,
         $password
     ) {
-        //Your plugin code u: aaaa@aaaa.com  pw: aA1111111!
+            //Your plugin code u: aaaa@aaaa.com  pw: aA1111111!
         if ($this->helperData->isLogEnabled()) {
             try {
                 $logModel = $this->connexionLogRepository->createNew();
                 $logModel->setIp($this->address->getRemoteAddress());
                 $logModel->setCustomerId($result->getId());
                 $this->connexionLogRepository->save($logModel);
+                $cc = $this->connexionLogRepository->getConnCount();
+                $this->logger->info('customer.log.plugin.after.auth: cc = ' . $cc);
+                $this->helperData->sendNotification();
             } catch (LocalizedException $e) {
                 $this->logger->critical('customer.log.plugin.after.auth: error: ' . $e->getMessage());
             }

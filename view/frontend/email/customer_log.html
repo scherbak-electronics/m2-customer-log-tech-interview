@@ -1,0 +1,11 @@
+<!--@subject {{trans "Customer Login Notification"}} @-->
+<!--@vars {
+"var total_connexions":"total connexions"
+} @-->
+
+{{template config_path="design/email/header_template"}}
+
+
+<p><strong>{{trans "Total connexions:"}}</strong> {{var total_connexions}}</p>
+
+{{template config_path="design/email/footer_template"}}

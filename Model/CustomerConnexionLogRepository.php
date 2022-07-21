@@ -126,6 +126,26 @@ class CustomerConnexionLogRepository implements CustomerConnexionLogRepositoryIn
         return $searchResults;
     }
 
+    public function getConnCount() : int
+    {
+        $oneDayBefore = (new \DateTime())->sub(new \DateInterval('P1D'))->format('Y-m-d H:i:s');
+        $collection = $this->customerConnexionLogCollectionFactory->create();
+        $collection->addFieldToFilter('created_at', ['from' => $oneDayBefore]);
+        return $collection->count();
+    }
+
+    public function getLastIp($customerId): string
+    {
+        $collection = $this->customerConnexionLogCollectionFactory->create();
+        $select = $collection->getSelect();
+            $select->columns(
+                new \Zend_Db_Expr('ip, max(created_at)')
+            )
+            ->where('customer_id = ?', $customerId);
+        $res = $this->resource->getConnection()->fetchRow($select);
+        return $res['ip'];
+    }
+
     /**
      * @inheritDoc
      */
